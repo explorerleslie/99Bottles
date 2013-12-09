@@ -60,6 +60,8 @@ def englishNumber(number)
 end
 
 # TODO: Refactor all the duplication out of here. 
+# TODO: Can I make one function that specifies an argument that 
+#   says whether to print lyrics with numbers or English? 
 def bottlesOfBeerEnglish(number)
   while number >= 0
     if number == 0
