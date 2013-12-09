@@ -59,10 +59,43 @@ def englishNumber(number)
 end
 
 def bottlesOfBeerEnglish(number)
-  #TODO
+  while number >= 0
+    if number == 0
+      puts 'No more bottles of beer on the wall,'
+      puts 'No more bottles of beer.'
+      puts 'Go to the store and buy some more,'
+      puts englishNumber(99).capitalize + ' bottles of beer on the wall!'
+      number = number - 1
+      
+    elsif number == 1
+      puts englishNumber(number).capitalize + ' bottle of beer on the wall,'
+      puts englishNumber(number).capitalize + ' bottle of beer.'
+      puts 'Take one down and pass it around'
+      number = number - 1
+      puts 'No more bottles of beer on the wall!'
+      puts ''
+      
+    elsif number == 2
+      puts englishNumber(number).capitalize + ' bottles of beer on the wall,'
+      puts englishNumber(number).capitalize + ' bottles of beer.'
+      puts 'Take one down and pass it around'
+      number = number - 1
+      puts englishNumber(number).capitalize + ' bottle of beer on the wall!'
+      puts ''
+    
+    else
+      puts englishNumber(number).capitalize + ' bottles of beer on the wall,'
+      puts englishNumber(number).capitalize + ' bottles of beer.'
+      puts 'Take one down and pass it around'
+      number = number - 1
+      puts englishNumber(number).capitalize + ' bottles of beer on the wall!'
+      puts ''
+    end
+  end
 end
 
 # bottlesOfBeer(99)
+bottlesOfBeerEnglish(99)
 
 # OMG put my test framework in a function! Then I could iterate easily over EVERY test case in this scenario!
 # puts '-1 ' + (englishNumber(-1) == 'Please enter a number greater than or equal to zero').to_s
