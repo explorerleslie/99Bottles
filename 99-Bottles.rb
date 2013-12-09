@@ -101,7 +101,7 @@ end
 # bottlesOfBeer(99)
 bottlesOfBeerEnglish(99)
 
-# OMG put my test framework in a function! Then I could iterate easily over EVERY test case in this scenario!
+# TODO: OMG put my test framework in a function! Then I could iterate easily over EVERY test case in this scenario!
 # puts '-1 ' + (englishNumber(-1) == 'Please enter a number greater than or equal to zero').to_s
 # puts '0 ' + (englishNumber(0) == 'zero').to_s
 # puts '4 ' + (englishNumber(4) == 'four').to_s
