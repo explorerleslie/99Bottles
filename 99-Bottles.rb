@@ -1,3 +1,4 @@
+# Refactor all the duplication out of here.
 def bottlesOfBeer(number)
   while number >= 0
     if number == 0
@@ -58,6 +59,7 @@ def englishNumber(number)
   
 end
 
+# Refactor all the duplication out of here.
 def bottlesOfBeerEnglish(number)
   while number >= 0
     if number == 0
