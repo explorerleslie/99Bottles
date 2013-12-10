@@ -59,47 +59,50 @@ def englishNumber(number)
   
 end
 
-# TODO: Refactor all the duplication out of here. 
+def numberOfBottles(number)
+  number == 0 ? 'No' : englishNumber(number).capitalize
+end
+
+def isPlural(number)
+  's' if number != 1
+end
+
+def firstAndLastLine(number)
+  numberOfBottles(number) + ' bottle' + isPlural(number).to_s + ' of beer on the wall!'
+end
+
+def verseGenerator(number)
+  puts firstAndLastLine(number)
+  puts numberOfBottles(number) + ' bottle' + isPlural(number).to_s + ' of beer.'
+  puts 'Take one down and pass it around,'
+  puts firstAndLastLine(number - 1)
+  puts ''
+end
+
 # TODO: Can I make one function that specifies an argument that 
 #   says whether to print lyrics with numbers or English? 
 def bottlesOfBeerEnglish(number)
-  while number >= 0
-    if number == 0
-      puts 'No more bottles of beer on the wall,'
-      puts 'No more bottles of beer.'
-      puts 'Go to the store and buy some more,'
-      puts englishNumber(99).capitalize + ' bottles of beer on the wall!'
-      number = number - 1
-      
-    elsif number == 1
-      puts englishNumber(number).capitalize + ' bottle of beer on the wall,'
-      puts englishNumber(number).capitalize + ' bottle of beer.'
-      puts 'Take one down and pass it around'
-      number = number - 1
-      puts 'No more bottles of beer on the wall!'
-      puts ''
-      
-    elsif number == 2
-      puts englishNumber(number).capitalize + ' bottles of beer on the wall,'
-      puts englishNumber(number).capitalize + ' bottles of beer.'
-      puts 'Take one down and pass it around'
-      number = number - 1
-      puts englishNumber(number).capitalize + ' bottle of beer on the wall!'
-      puts ''
-    
-    else
-      puts englishNumber(number).capitalize + ' bottles of beer on the wall,'
-      puts englishNumber(number).capitalize + ' bottles of beer.'
-      puts 'Take one down and pass it around'
-      number = number - 1
-      puts englishNumber(number).capitalize + ' bottles of beer on the wall!'
-      puts ''
-    end
+  #store away the original number tp use in the last verse.
+  originalNumber = number
+  
+  while number > 0
+    verseGenerator number
+    number = number -1
   end
+    
+  puts 'No more bottles of beer on the wall,'
+  puts 'No more bottles of beer.'
+  puts 'Go to the store and buy some more,'
+  puts firstAndLastLine(originalNumber)
+  
 end
 
 # bottlesOfBeer(99)
 bottlesOfBeerEnglish(99)
+
+# puts verseGenerator 1
+# puts verseGenerator 2
+# puts verseGenerator 3
 
 # TODO: OMG put my test framework in a function! Then I could iterate easily over EVERY test case in this scenario!
 # puts '-1 ' + (englishNumber(-1) == 'Please enter a number greater than or equal to zero').to_s
